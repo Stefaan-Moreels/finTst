@@ -15,8 +15,8 @@ import java.io.Serializable;
 @Entity
 @DynamicInsert
 @DynamicUpdate
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true, exclude = {"company"})
+@EqualsAndHashCode(callSuper = true, exclude = {"company"})
 @DiscriminatorValue("COMPANY")
 public class CompanyAddress extends Address implements Serializable {
 

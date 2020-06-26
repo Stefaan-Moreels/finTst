@@ -11,4 +11,9 @@ public class CompanyService extends BaseService<Company, CompanyRepository> {
         super(Company.class, repository);
     }
 
+    @Override
+    public Company save(Company company) {
+        company.getAddresses().forEach((address) -> address.setCompany(company));
+        return super.save(company);
+    }
 }

@@ -20,8 +20,8 @@ import java.util.Set;
 @Table(name = "person", indexes = {
         @Index(name = "idx_person_name", columnList = "first_name,name")
 })
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true, exclude = {"address","companies"})
+@EqualsAndHashCode(callSuper = true, exclude = {"address","companies"})
 public class Person extends BaseEntity {
 
     @OneToOne(targetEntity = PersonAddress.class, cascade = CascadeType.ALL)

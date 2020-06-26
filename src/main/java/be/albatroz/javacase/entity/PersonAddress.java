@@ -16,8 +16,8 @@ import javax.persistence.OneToOne;
 @Entity
 @DynamicInsert
 @DynamicUpdate
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true, exclude = {"person"})
+@EqualsAndHashCode(callSuper = true, exclude = {"person"})
 @DiscriminatorValue("PERSON")
 public class PersonAddress extends Address {
 

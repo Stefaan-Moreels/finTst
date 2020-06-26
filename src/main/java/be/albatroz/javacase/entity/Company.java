@@ -19,14 +19,14 @@ import java.util.Set;
 @Table(name = "company", indexes = {
         @Index(name = "idx_company_name", columnList = "name")
 })
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true, exclude = {"people", "addresses"} )
+@EqualsAndHashCode(callSuper = true, exclude = {"people", "addresses"} )
 public class Company extends BaseEntity {
 
     @ManyToMany(targetEntity = Person.class, mappedBy = "companies")
     private Set<Person> people = new HashSet<>();
 
-    @OneToMany(targetEntity = CompanyAddress.class, mappedBy = "company", cascade = CascadeType.REMOVE)
+    @OneToMany(targetEntity = CompanyAddress.class, mappedBy = "company", cascade = CascadeType.ALL)
     private Set<CompanyAddress> addresses = new HashSet<>();
 
     @Column

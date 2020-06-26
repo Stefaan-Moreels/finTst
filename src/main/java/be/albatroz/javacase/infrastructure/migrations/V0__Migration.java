@@ -65,12 +65,12 @@ public class V0__Migration extends BaseJavaMigration {
         jdbcTemplate.execute("alter table person_company " +
                 "add constraint FK_person_company_company " +
                 "foreign key (company_id) " +
-                "references person;");
+                "references company;");
 
         jdbcTemplate.execute("alter table person_company " +
                 "add constraint FK_person_company_person " +
                 "foreign key (person_id) " +
-                "references company;");
+                "references person;");
 
     }
 }
