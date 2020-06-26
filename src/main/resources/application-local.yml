@@ -1,0 +1,7 @@
+logging:
+  level:
+    be.albatroz: DEBUG
+    org:
+      springframework: INFO
+      hibernate.stat: INFO
+      hibernate.hql: INFO
